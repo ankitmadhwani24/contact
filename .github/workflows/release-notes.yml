@@ -15,9 +15,11 @@ jobs:
     - name: Generate release notes
       uses: release-drafter/release-drafter@v5
       id: drafter
+      env:
+          GITHUB_TOKEN: ${{ secrets.test }}
       with:
         config-name: release-drafter.yml
-        token: ${{ with.test }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         sort-by: semver
         
 
