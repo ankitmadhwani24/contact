@@ -17,7 +17,7 @@ jobs:
       id: drafter
       with:
         config-name: release-drafter.yml
-        token: ${{ secrets.test }}
+        token: ${{ env.test }}
         sort-by: semver
         
 
