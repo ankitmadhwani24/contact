@@ -16,15 +16,10 @@ jobs:
       uses: release-drafter/release-drafter@v5
       id: drafter
       with:
+        config-name: .github/release-drafter.yml
         token: ${{ secrets.GITHUB_TOKEN }}
         sort-by: semver
-        template: |
-          ## Changes
-          $CHANGES
-
-          ## Commits
-          $COMMITS
-          $VERSIONS
+        
 
     - name: Create release
       uses: actions/create-release@v1.1.4
